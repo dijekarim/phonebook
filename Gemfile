@@ -6,7 +6,7 @@ gem 'rails', '4.2.0'
 
 gem 'devise'
 
-gem 'cancan'
+gem 'cancancan'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
