@@ -2,6 +2,7 @@ class ContactsController < ApplicationController
 	load_and_authorize_resource
 	def index
 		@contacts = Contact.accessible_by(current_ability)
+		@users = User.all
 		# @users = User.find_by_sql "SELECT c.id, u.email FROM users u, contacts c WHERE u.id=c.user_id AND c.id=c.id"
 	end
 

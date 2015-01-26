@@ -36,18 +36,16 @@
 </div>
  
 <div class='container-fluid'>
-  <% flash.each do |key, value| %>
-      <div class='alert alert-<%= key %>'><%= value %></div>
-  <% end %>
-  <div class='span12'><%= yield %></div>
-  <%= debug(params) if Rails.env.development? %>
-</div>
- 
- <% if notice %>
+  <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
+  <div class='span12'><%= yield %></div>
+  <%= debug(params) if Rails.env.development? %>
+</div>
+ 
+ 
 </body>
 </html>

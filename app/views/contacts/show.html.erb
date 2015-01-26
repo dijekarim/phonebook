@@ -1,17 +1,22 @@
+<div class="border-form-div">
 <p>
   <strong>Name:</strong>
   <%= @contact.name %>
 </p>
- 
+<p>
+  <strong>Address:</strong>
+  <%= @contact.addr %>
+</p>
 <p>
   <strong>Phone:</strong>
   <%= @contact.phone_number %>
 </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @contact.addr %>
-</p>
+<%= render @contact.phone %>
+
+<h3>Add a phone:</h3>
+<%= render 'phones/form' %>
 
 <%= link_to 'Back', contacts_path %> | 
-<%= link_to 'Edit', edit_contact_path(@contact) %>
+<%= link_to 'Edit Contact', edit_contact_path(@contact) %>
+</div>
