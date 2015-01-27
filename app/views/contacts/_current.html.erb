@@ -1,4 +1,11 @@
-<h1>List Contact <%= current_user.email %></h1>
+<style type="text/css">
+.table th
+{
+  text-align: center;
+}
+</style>
+
+<h1>List Contact <%= current_user.username %></h1>
   <div class="table-responsive">
   <table class="table table-hover table-striped table-bordered">
     <tr>
@@ -16,7 +23,7 @@
         <td><%= contact.addr %></td>
         <td><%= contact.phone_number %></td>
         <td><%= link_to contact_path(contact), class: 'btn btn-primary' do %>
-            <i class="glyphicon glyphicon-user"></i> Show
+            <i class="glyphicon glyphicon-user"></i> Details
             <% end %>
         </td>
         <td><%= link_to edit_contact_path(contact), class: 'btn btn-primary' do %>

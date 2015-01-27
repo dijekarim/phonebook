@@ -18,7 +18,7 @@
  /* User sign in and sign forms. */
  
 .border-form-div {
-  max-width: 300px;
+  max-width: 350px;
   padding: 19px 29px 29px;
   margin: 0 auto 20px;
   background-color: #fff;
@@ -42,3 +42,5 @@
   margin-bottom: 15px;
   padding: 7px 9px;
 }
+
+@import "bootstrap"

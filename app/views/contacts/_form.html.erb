@@ -13,6 +13,13 @@
       </ul>
     </div>
   <% end %>
+
+  <% if can? :manage, :all %>
+  <p>
+    <%= f.label :"Username" %><br>
+    <%= f.collection_select(:user_id, @users, :id, :username, :include_blank => "Select Username") %>
+  </p>
+  <% end %>
   
   <p>
     <%= f.label :Name %><br>

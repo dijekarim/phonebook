@@ -12,10 +12,12 @@ class ContactsController < ApplicationController
 	
 	def new 
 		@contact = Contact.new
+		@users = User.all
 	end
 
 	def edit
 		@contact = Contact.find(params[:id])
+		@users = User.all
 		authorize! :edit, @contact
 	end
 
@@ -34,7 +36,11 @@ class ContactsController < ApplicationController
 
 	def create
 		@contact = Contact.new(contact_params)
-		@contact.user = current_user
+		if @contact.user == nil
+			@contact.user = current_user
+		else
+			@contact.user.id = :user_id
+		end
 		authorize! :create, @contact
  
   		if @contact.save
@@ -55,6 +61,6 @@ class ContactsController < ApplicationController
 
 	private
 	  def contact_params
-	    params.require(:contact).permit(:name, :phone_number, :addr)
+	    params.require(:contact).permit(:name, :phone_number, :addr, :user_id)
 	  end
 end

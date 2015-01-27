@@ -11,7 +11,7 @@ class PhonesController < ApplicationController
     @phone.destroy
     redirect_to contact_path(@contact)
   end
-  
+
   private
     def phone_params
       params.require(:phone).permit(:more_phone)

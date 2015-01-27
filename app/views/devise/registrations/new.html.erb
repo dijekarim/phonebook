@@ -3,14 +3,14 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
-    <%= f.email_field :email, autofocus: true, :placeholder => 'Email address' %><br>
+  	<%= f.text_field :username, autofocus: true, :placeholder => 'Username', :class => 'form-control'  %>
+    <%= f.email_field :email, :placeholder => 'Email address', :class => 'form-control'  %><br>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off", :placeholder => 'Password' %>
-    <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => 'Password Confirmation' %>
-    <br> <%= f.check_box :admin %> <%= f.label "Admin" %>
+    <%= f.password_field :password, autocomplete: "off", :placeholder => 'Password', :class => 'form-control'  %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => 'Password Confirmation', :class => 'form-control'  %>
+    <br> <%= f.check_box :admin,:checked=>false %> <%= f.label "Admin" %>
     <br> <%= f.submit "Sign up" %>
 <% end %>
 

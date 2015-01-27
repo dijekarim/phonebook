@@ -3,6 +3,13 @@
     <i class="glyphicon glyphicon-plus"></i> New Contact
 <% end %>
 
+<style type="text/css">
+.table th
+{
+  text-align: center;
+}
+</style>
+
 <% if cannot? :manage, :all %>
   <%= render 'current' %>
 <% else %>
