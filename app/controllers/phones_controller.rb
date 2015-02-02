@@ -13,7 +13,7 @@ class PhonesController < ApplicationController
   end
 
   private
-    def phone_params
-      params.require(:phone).permit(:more_phone)
-    end
+  def phone_params
+    params.require(:phone).permit(:more_phone)
+  end
 end
