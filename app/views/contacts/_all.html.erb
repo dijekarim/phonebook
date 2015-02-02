@@ -16,7 +16,7 @@
         <% if contact.user_id == $userid %>
           <tr>
             <td><%= $i %></td>
-            <td><%= contact.name %></td>
+            <td><%= link_to contact.name, contact_path(contact) %></td>
             <td><%= contact.addr %></td>
             <td><%= contact.phone_number %></td>
             <td><%= link_to contact_path(contact), class: 'btn btn-primary' do %>
