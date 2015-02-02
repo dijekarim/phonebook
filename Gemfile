@@ -10,7 +10,7 @@ gem 'cancancan'
 
 gem 'bootstrap-sass'
 
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
