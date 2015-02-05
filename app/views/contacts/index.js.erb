@@ -1,0 +1,6 @@
+<% if cannot? :manage, :all %>
+  $('#sembarang').html("<%= j (render 'current') %>");
+<% else %>
+  $('#sembarang').html("<%= j (render 'all') %>");
+<% end %>
+$('#task-form').slideUp(400);

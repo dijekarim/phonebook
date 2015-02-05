@@ -54,7 +54,7 @@ feature 'User', :js => true do
     click_button 'Log in'
 
     expect(page).to have_content 'successfully'
-    within 'h1' do
+    within 'h3' do
       expect(page).to have_content username
     end
   end

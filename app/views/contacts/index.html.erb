@@ -1,7 +1,9 @@
 <br>
-<%= link_to new_contact_path, class: 'btn btn-primary', class: 'btn btn-primary' do %>
+<%= link_to new_contact_path, class: 'btn btn-primary', class: 'btn btn-primary', remote: true do %>
     <i class="glyphicon glyphicon-plus"></i> New Contact
 <% end %>
+
+<div id="task-form" style="display:none;"></div>
 
 <style type="text/css">
 .table th
@@ -11,7 +13,11 @@
 </style>
 
 <% if cannot? :manage, :all %>
-  <%= render 'current' %>
+  <div id="sembarang">
+    <%= render 'current' %>
+  </div>
 <% else %>
-  <%= render 'all' %>
+  <div id="sembarang">
+    <%= render 'all' %>
+  </div>
 <% end %>

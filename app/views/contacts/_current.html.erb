@@ -1,12 +1,5 @@
-<style type="text/css">
-.table th
-{
-  text-align: center;
-}
-</style>
-
-<h1>List Contact <%= current_user.username %> </h1>
-  <div class="table-responsive">
+<h3>List Contact <%= current_user.username %> </h3>
+<div class="table-responsive">
   <table class="table table-hover table-striped table-bordered">
     <tr>
       <th> # </th>
@@ -22,11 +15,16 @@
         <td><%= link_to contact.name, contact_path(contact) %></td>
         <td><%= contact.addr %></td>
         <td><%= contact.phone_number %></td>
-        <td><%= link_to edit_contact_path(contact), class: 'btn btn-primary' do %>
+        <td><%= link_to edit_contact_path(contact),
+                class: 'btn btn-primary',
+                remote: true do %>
               <i class="glyphicon glyphicon-pencil"></i> Edit
             <% end %>
         </td>
-        <td><%= link_to contact_path(contact), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-primary' do %>
+        <td><%= link_to contact_path(contact),
+                method: :delete,
+                data: {confirm: 'Are you sure?'},
+                class: 'btn btn-primary' do %>
               <i class="glyphicon glyphicon-trash"></i> Destroy
             <% end %>
         </td>
@@ -34,4 +32,4 @@
       <% $i+=1 %>
     <% end %>
   </table>
-  </div>
+</div>

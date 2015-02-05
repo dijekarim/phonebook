@@ -3,34 +3,39 @@
   <% $userid = user.id %>
   <h3> Contact of : <%= user.username %> (<% if user.admin? %> admin <% else %> user <% end %>)</h3>
   <div class="table-responsive">
-  <table class="table table-hover table-striped table-bordered">
-    <tr>
-      <th> # </th>
-      <th data-sortable="true">Name</th>
-      <th>Address</th>
-      <th>Phone Number</th>
-      <th colspan="2">Action</th>
-    </tr>
-    <% $i=1 %>
-      <% @contacts.each do |contact| %>
-        <% if contact.user_id == $userid %>
-          <tr>
-            <td><%= $i %></td>
-            <td><%= link_to contact.name, contact_path(contact) %></td>
-            <td><%= contact.addr %></td>
-            <td><%= contact.phone_number %></td>
-            <td><%= link_to edit_contact_path(contact), class: 'btn btn-primary' do %>
-                  <i class="glyphicon glyphicon-pencil"></i> Edit
-                <% end %>
-            </td>
-            <td><%= link_to contact_path(contact), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' do %>
-                  <i class="glyphicon glyphicon-trash"></i> Destroy
-                <% end %>
-            </td>
-          </tr>
-          <% $i+=1 %>
+    <table class="table table-hover table-striped table-bordered" id="table-contact">
+      <tr>
+        <th> # </th>
+        <th data-sortable="true">Name</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+        <th colspan="2">Action</th>
+      </tr>
+      <% $i=1 %>
+        <% @contacts.each do |contact| %>
+          <% if contact.user_id == $userid %>
+            <tr>
+              <td><%= $i %></td>
+              <td><%= link_to contact.name, contact_path(contact) %></td>
+              <td><%= contact.addr %></td>
+              <td><%= contact.phone_number %></td>
+              <td><%= link_to edit_contact_path(contact),
+                      class: 'btn btn-primary',
+                      remote: true do %>
+                    <i class="glyphicon glyphicon-pencil"></i> Edit
+                  <% end %>
+              </td>
+              <td><%= link_to contact_path(contact),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' },
+                      class: 'btn btn-primary' do %>
+                    <i class="glyphicon glyphicon-trash"></i> Destroy
+                  <% end %>
+              </td>
+            </tr>
+            <% $i+=1 %>
+          <% end %>
         <% end %>
-      <% end %>
-  </table>
+    </table>
   </div>
-  <% end %>
+<% end %>

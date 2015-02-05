@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
   load_and_authorize_resource
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :js
 
   def index
     @contacts = Contact.accessible_by(current_ability)
