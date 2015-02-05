@@ -47,6 +47,12 @@ group :development, :test do
   gem 'spring'
 
   gem 'rspec-rails'
+
+  gem 'capybara'
+
+  gem 'database_cleaner'
+
+  gem 'selenium-webdriver'
 end
 
 gem 'pry'

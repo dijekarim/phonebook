@@ -9,14 +9,21 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
+ *= require bootstrap.min
  *= require_tree .
- *= require bootstrap
  *= require_self
  */
-
  /* User sign in and sign forms. */
- 
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../assets/glyphicons-halflings-regular.eot');
+  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
+       url('../assets/glyphicons-halflings-regular.woff') format('woff'), 
+       url('../assets/glyphicons-halflings-regular.ttf') format('truetype'), 
+       url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
 .border-form-div {
   max-width: 350px;
   padding: 19px 29px 29px;
@@ -42,5 +49,3 @@
   margin-bottom: 15px;
   padding: 7px 9px;
 }
-
-@import "bootstrap"

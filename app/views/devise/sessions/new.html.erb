@@ -2,7 +2,7 @@
   <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <%= f.text_field :login, autofocus: true, :placeholder => 'Email address', :class => 'form-control'  %>
+    <%= f.text_field :login, autofocus: true, :placeholder => 'Username or Email', :class => 'form-control'  %>
     <%= f.password_field :password, autocomplete: "off", :placeholder => 'Password', :class => 'form-control'  %>
   <% if devise_mapping.rememberable? -%>
     <div class="form-group">
